@@ -1,0 +1,274 @@
+fileFormatVersion: 2
+guid: 252dc38a9697c204f98380574698fe4e
+timeCreated: 1454177958
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Cylinder001
+    100004: LongVineBone_01
+    100006: LongVineBone_02
+    100008: LongVineBone_03
+    100010: LongVineBone_04
+    100012: LongVineBone_05
+    100014: LongVineBone_06
+    100016: LongVineBone_07
+    100018: LongVineBone_08
+    100020: LongVineBone_09
+    100022: LongVineBone_10
+    100024: Vine Nr 2
+    100026: VineBone_Nr2_0
+    100028: VineBone_Nr2_02
+    100030: VineBone_Nr2_03
+    100032: VineBone_Nr2_04
+    100034: VineBone_Nr2_05
+    100036: VineBone_Nr2_06
+    100038: VineBone_Nr2_07
+    100040: VineBone_Nr2_08
+    100042: VineBone_Nr2_09
+    100044: VineBone_Nr2_10
+    100046: VineBone_Nr2_Nub
+    400000: //RootNode
+    400002: Cylinder001
+    400004: LongVineBone_01
+    400006: LongVineBone_02
+    400008: LongVineBone_03
+    400010: LongVineBone_04
+    400012: LongVineBone_05
+    400014: LongVineBone_06
+    400016: LongVineBone_07
+    400018: LongVineBone_08
+    400020: LongVineBone_09
+    400022: LongVineBone_10
+    400024: Vine Nr 2
+    400026: VineBone_Nr2_0
+    400028: VineBone_Nr2_02
+    400030: VineBone_Nr2_03
+    400032: VineBone_Nr2_04
+    400034: VineBone_Nr2_05
+    400036: VineBone_Nr2_06
+    400038: VineBone_Nr2_07
+    400040: VineBone_Nr2_08
+    400042: VineBone_Nr2_09
+    400044: VineBone_Nr2_10
+    400046: VineBone_Nr2_Nub
+    4300000: Cylinder001
+    4300002: Vine Nr 2
+    7400000: Appear
+    7400002: Hold
+    9500000: //RootNode
+    13700000: Cylinder001
+    13700002: Vine Nr 2
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Appear
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cylinder001
+        weight: 1
+      - path: LongVineBone_01
+        weight: 1
+      - path: LongVineBone_01/LongVineBone_02
+        weight: 1
+      - path: LongVineBone_01/LongVineBone_02/LongVineBone_03
+        weight: 1
+      - path: LongVineBone_01/LongVineBone_02/LongVineBone_03/LongVineBone_04
+        weight: 1
+      - path: LongVineBone_01/LongVineBone_02/LongVineBone_03/LongVineBone_04/LongVineBone_05
+        weight: 1
+      - path: LongVineBone_01/LongVineBone_02/LongVineBone_03/LongVineBone_04/LongVineBone_05/LongVineBone_06
+        weight: 1
+      - path: LongVineBone_01/LongVineBone_02/LongVineBone_03/LongVineBone_04/LongVineBone_05/LongVineBone_06/LongVineBone_07
+        weight: 1
+      - path: LongVineBone_01/LongVineBone_02/LongVineBone_03/LongVineBone_04/LongVineBone_05/LongVineBone_06/LongVineBone_07/LongVineBone_08
+        weight: 1
+      - path: LongVineBone_01/LongVineBone_02/LongVineBone_03/LongVineBone_04/LongVineBone_05/LongVineBone_06/LongVineBone_07/LongVineBone_08/LongVineBone_09
+        weight: 1
+      - path: LongVineBone_01/LongVineBone_02/LongVineBone_03/LongVineBone_04/LongVineBone_05/LongVineBone_06/LongVineBone_07/LongVineBone_08/LongVineBone_09/LongVineBone_10
+        weight: 1
+      - path: Vine Nr 2
+        weight: 1
+      - path: VineBone_Nr2_0
+        weight: 1
+      - path: VineBone_Nr2_0/VineBone_Nr2_02
+        weight: 1
+      - path: VineBone_Nr2_0/VineBone_Nr2_02/VineBone_Nr2_03
+        weight: 1
+      - path: VineBone_Nr2_0/VineBone_Nr2_02/VineBone_Nr2_03/VineBone_Nr2_04
+        weight: 1
+      - path: VineBone_Nr2_0/VineBone_Nr2_02/VineBone_Nr2_03/VineBone_Nr2_04/VineBone_Nr2_05
+        weight: 1
+      - path: VineBone_Nr2_0/VineBone_Nr2_02/VineBone_Nr2_03/VineBone_Nr2_04/VineBone_Nr2_05/VineBone_Nr2_06
+        weight: 1
+      - path: VineBone_Nr2_0/VineBone_Nr2_02/VineBone_Nr2_03/VineBone_Nr2_04/VineBone_Nr2_05/VineBone_Nr2_06/VineBone_Nr2_07
+        weight: 1
+      - path: VineBone_Nr2_0/VineBone_Nr2_02/VineBone_Nr2_03/VineBone_Nr2_04/VineBone_Nr2_05/VineBone_Nr2_06/VineBone_Nr2_07/VineBone_Nr2_08
+        weight: 1
+      - path: VineBone_Nr2_0/VineBone_Nr2_02/VineBone_Nr2_03/VineBone_Nr2_04/VineBone_Nr2_05/VineBone_Nr2_06/VineBone_Nr2_07/VineBone_Nr2_08/VineBone_Nr2_09
+        weight: 1
+      - path: VineBone_Nr2_0/VineBone_Nr2_02/VineBone_Nr2_03/VineBone_Nr2_04/VineBone_Nr2_05/VineBone_Nr2_06/VineBone_Nr2_07/VineBone_Nr2_08/VineBone_Nr2_09/VineBone_Nr2_10
+        weight: 1
+      - path: VineBone_Nr2_0/VineBone_Nr2_02/VineBone_Nr2_03/VineBone_Nr2_04/VineBone_Nr2_05/VineBone_Nr2_06/VineBone_Nr2_07/VineBone_Nr2_08/VineBone_Nr2_09/VineBone_Nr2_10/VineBone_Nr2_Nub
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Hold
+      takeName: Take 001
+      firstFrame: 30
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cylinder001
+        weight: 1
+      - path: LongVineBone_01
+        weight: 1
+      - path: LongVineBone_01/LongVineBone_02
+        weight: 1
+      - path: LongVineBone_01/LongVineBone_02/LongVineBone_03
+        weight: 1
+      - path: LongVineBone_01/LongVineBone_02/LongVineBone_03/LongVineBone_04
+        weight: 1
+      - path: LongVineBone_01/LongVineBone_02/LongVineBone_03/LongVineBone_04/LongVineBone_05
+        weight: 1
+      - path: LongVineBone_01/LongVineBone_02/LongVineBone_03/LongVineBone_04/LongVineBone_05/LongVineBone_06
+        weight: 1
+      - path: LongVineBone_01/LongVineBone_02/LongVineBone_03/LongVineBone_04/LongVineBone_05/LongVineBone_06/LongVineBone_07
+        weight: 1
+      - path: LongVineBone_01/LongVineBone_02/LongVineBone_03/LongVineBone_04/LongVineBone_05/LongVineBone_06/LongVineBone_07/LongVineBone_08
+        weight: 1
+      - path: LongVineBone_01/LongVineBone_02/LongVineBone_03/LongVineBone_04/LongVineBone_05/LongVineBone_06/LongVineBone_07/LongVineBone_08/LongVineBone_09
+        weight: 1
+      - path: LongVineBone_01/LongVineBone_02/LongVineBone_03/LongVineBone_04/LongVineBone_05/LongVineBone_06/LongVineBone_07/LongVineBone_08/LongVineBone_09/LongVineBone_10
+        weight: 1
+      - path: Vine Nr 2
+        weight: 1
+      - path: VineBone_Nr2_0
+        weight: 1
+      - path: VineBone_Nr2_0/VineBone_Nr2_02
+        weight: 1
+      - path: VineBone_Nr2_0/VineBone_Nr2_02/VineBone_Nr2_03
+        weight: 1
+      - path: VineBone_Nr2_0/VineBone_Nr2_02/VineBone_Nr2_03/VineBone_Nr2_04
+        weight: 1
+      - path: VineBone_Nr2_0/VineBone_Nr2_02/VineBone_Nr2_03/VineBone_Nr2_04/VineBone_Nr2_05
+        weight: 1
+      - path: VineBone_Nr2_0/VineBone_Nr2_02/VineBone_Nr2_03/VineBone_Nr2_04/VineBone_Nr2_05/VineBone_Nr2_06
+        weight: 1
+      - path: VineBone_Nr2_0/VineBone_Nr2_02/VineBone_Nr2_03/VineBone_Nr2_04/VineBone_Nr2_05/VineBone_Nr2_06/VineBone_Nr2_07
+        weight: 1
+      - path: VineBone_Nr2_0/VineBone_Nr2_02/VineBone_Nr2_03/VineBone_Nr2_04/VineBone_Nr2_05/VineBone_Nr2_06/VineBone_Nr2_07/VineBone_Nr2_08
+        weight: 1
+      - path: VineBone_Nr2_0/VineBone_Nr2_02/VineBone_Nr2_03/VineBone_Nr2_04/VineBone_Nr2_05/VineBone_Nr2_06/VineBone_Nr2_07/VineBone_Nr2_08/VineBone_Nr2_09
+        weight: 1
+      - path: VineBone_Nr2_0/VineBone_Nr2_02/VineBone_Nr2_03/VineBone_Nr2_04/VineBone_Nr2_05/VineBone_Nr2_06/VineBone_Nr2_07/VineBone_Nr2_08/VineBone_Nr2_09/VineBone_Nr2_10
+        weight: 1
+      - path: VineBone_Nr2_0/VineBone_Nr2_02/VineBone_Nr2_03/VineBone_Nr2_04/VineBone_Nr2_05/VineBone_Nr2_06/VineBone_Nr2_07/VineBone_Nr2_08/VineBone_Nr2_09/VineBone_Nr2_10/VineBone_Nr2_Nub
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
