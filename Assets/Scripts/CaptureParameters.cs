@@ -12,6 +12,7 @@ public class CaptureParameters : MonoBehaviour
     public ObjectRotator rotatorBottom;
     public MeshRenderer meshRendererTop;
     public MeshRenderer meshRendererBottom;
+    public GameObject healParticles;
 
     private Color startColorTop;
     private Color startColorBottom;
@@ -43,6 +44,10 @@ public class CaptureParameters : MonoBehaviour
                 cs.CheckCaptureStatus();
             }
         }
+        if (other.tag == "Player" && health < maxHealth)
+        {
+            healParticles.SetActive(true);
+        }
     }
 
     void OnTriggerStay(Collider other)
@@ -54,10 +59,19 @@ public class CaptureParameters : MonoBehaviour
             {
                 isCapturedByPlayer = true;
             }
-            if (health > maxHealth)
+            if (health >= maxHealth)
             {
                 health = maxHealth;
+                healParticles.SetActive(false);
             }
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            
         }
     }
 
@@ -67,5 +81,7 @@ public class CaptureParameters : MonoBehaviour
         rotatorBottom.rotationSpeed = new Vector3(0f, Mathf.Lerp(0f, rotatorBottom.rotationSpeedOriginal.y, health / maxHealth), 0f);
         meshRendererTop.material.SetColor("_EmissionColor", new Color(Mathf.Lerp(0f, startColorTop.r, health / maxHealth), Mathf.Lerp(0f, startColorTop.g, health / maxHealth), Mathf.Lerp(0f, startColorTop.b, health / maxHealth), 1f));
         meshRendererBottom.material.SetColor("_EmissionColor", new Color(Mathf.Lerp(0f, startColorBottom.r, health / maxHealth), Mathf.Lerp(0f, startColorBottom.g, health / maxHealth), Mathf.Lerp(0f, startColorBottom.b, health / maxHealth), 1f));
+
+
     }
 }

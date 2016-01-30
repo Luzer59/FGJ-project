@@ -177,7 +177,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 454794}
+  - 65: {fileID: 6579120}
   - 114: {fileID: 11400248}
+  - 114: {fileID: 11436230}
   m_Layer: 0
   m_Name: EarthSkill
   m_TagString: Untagged
@@ -2053,6 +2055,18 @@ Transform:
   - {fileID: 475962}
   m_Father: {fileID: 480330}
   m_RootOrder: 0
+--- !u!65 &6579120
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 112640}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 2}
+  m_Center: {x: .790000021, y: .899999976, z: .479999989}
 --- !u!95 &9504752
 Animator:
   serializedVersion: 3
@@ -2113,6 +2127,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e0fbfb3eb2eb922449a114cc386bf70e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11436230
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 112640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70df0133f41e49d4eb1fda4ee3ddac2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!137 &13734084
