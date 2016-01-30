@@ -104,8 +104,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 783e82c8686d2ae46aa3a2b7787008f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireSkill1Object: {fileID: 0}
+  fireSkill1Object: {fileID: 179456, guid: bc851363cf8dc7242b51d64c0102bbe4, type: 2}
   waterSkill1Object: {fileID: 124792, guid: 130f00d82c321ff458a3a5115f187095, type: 2}
+  mask:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!136 &13655308
 CapsuleCollider:
   m_ObjectHideFlags: 1
