@@ -8,8 +8,10 @@ public class EnemyAiBase : MonoBehaviour
     public State state;
 
     private CaptureSystem captureSystem;
+    private CaptureParameters captureParameters;
     private Transform target;
     private Transform objective;
+    private int targetIndex;
 
     void Awake()
     {
@@ -18,6 +20,7 @@ public class EnemyAiBase : MonoBehaviour
 
     void Start()
     {
+        captureParameters = captureSystem.activeZoneList[Random.Range(0, captureSystem.activeZoneList.Count)];
         target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
@@ -38,17 +41,13 @@ public class EnemyAiBase : MonoBehaviour
                 //attack code
                 break;
 
-            case State.moveTowardsObjective:  
-                //List<>         
-                if (!objective)
+            case State.moveTowardsObjective:   
+                if (captureParameters.isCapturedByPlayer == false)
                 {
-                    for (int i = 0; i < captureSystem.capturezones.Length; i++)
-                    {
-
-                    }
-                    //captureSystem.
+                    captureParameters = captureSystem.activeZoneList[Random.Range(0, captureSystem.activeZoneList.Count)];
                 }
-                transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));
+
+                transform.LookAt(new Vector3(captureParameters.transform.position.x, transform.position.y, captureParameters.transform.position.z));
                 transform.Translate(transform.forward * moveSpeed, Space.World);
                 break;
 

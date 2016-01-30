@@ -1,22 +1,8 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public class CaptureSystem : MonoBehaviour
 {
     public float maxHealth;
-    public GameObject[] capturezones;
-    public float[] health;
-
-    private bool[] isEnemyCaptured;
-
-    void Start()
-    {
-        isEnemyCaptured = new bool[capturezones.Length];
-        health = new float[capturezones.Length];
-    }
-
-    void Update()
-    {
-
-    }
+    public List<CaptureParameters> activeZoneList = new List<CaptureParameters> { };
 }
