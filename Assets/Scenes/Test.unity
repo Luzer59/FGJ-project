@@ -412,10 +412,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 9513276, guid: 7a5bd42a135f62e44963da52cd4e08f1, type: 2}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 132f06d5380707e458f8432c6adc687d, type: 2}
+    - target: {fileID: 169484, guid: 7a5bd42a135f62e44963da52cd4e08f1, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7a5bd42a135f62e44963da52cd4e08f1, type: 2}
   m_IsPrefabParent: 0
@@ -461,7 +461,7 @@ Prefab:
     - target: {fileID: 11425074, guid: 61abdc08eba595144b67b4838df302bb, type: 2}
       propertyPath: Enemy
       value: 
-      objectReference: {fileID: 149982, guid: 95051d16319284b46aa7e154fbcf2f09, type: 2}
+      objectReference: {fileID: 169484, guid: 7a5bd42a135f62e44963da52cd4e08f1, type: 2}
     - target: {fileID: 11425074, guid: 61abdc08eba595144b67b4838df302bb, type: 2}
       propertyPath: startTime
       value: 4

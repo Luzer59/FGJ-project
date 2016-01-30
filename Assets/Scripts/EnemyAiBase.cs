@@ -48,11 +48,22 @@ public class EnemyAiBase : MonoBehaviour
                 //attack code
                 break;
 
-            case State.moveTowardsObjective:   
-                if (captureParameters.isCapturedByPlayer == false)
+            case State.moveTowardsObjective:
+
+                if (!captureSystem.gameOver)
                 {
-                    captureParameters = captureSystem.activeZoneList[Random.Range(0, captureSystem.activeZoneList.Count)];
-                }
+                    while (true)
+                    {
+                        if (captureParameters.isCapturedByPlayer == false)
+                        {
+                            captureParameters = captureSystem.activeZoneList[Random.Range(0, captureSystem.activeZoneList.Count)];
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                }   
 
                 transform.LookAt(new Vector3(captureParameters.transform.position.x, transform.position.y, captureParameters.transform.position.z));
                 transform.Translate(transform.forward * moveSpeed, Space.World);

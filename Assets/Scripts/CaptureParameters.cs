@@ -9,6 +9,13 @@ public class CaptureParameters : MonoBehaviour
     public float damageRate;
     public float healRate;
 
+    private CaptureSystem cs;
+
+    void Awake()
+    {
+        cs = GameObject.FindGameObjectWithTag("GameController").GetComponent<CaptureSystem>();
+    }
+
     void Start()
     {
         health = maxHealth;
@@ -24,6 +31,7 @@ public class CaptureParameters : MonoBehaviour
             {
                 isCapturedByPlayer = false;
                 health = 0f;
+                cs.CheckCaptureStatus();
             }
         }
     }
