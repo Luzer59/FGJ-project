@@ -6,6 +6,9 @@ public class EnemyAiBase : MonoBehaviour
     public float moveSpeed;
     public enum State { idle, moveTowardsPlayer, moveTowardsObjective, meleeAttack, rangedAttack }
     public State state;
+    public int health;
+    [HideInInspector]
+    public int maxHealth;
 
     private CaptureSystem captureSystem;
     private CaptureParameters captureParameters;
@@ -25,7 +28,7 @@ public class EnemyAiBase : MonoBehaviour
     {
         captureParameters = captureSystem.activeZoneList[Random.Range(0, captureSystem.activeZoneList.Count)];
         //target = GameObject.FindGameObjectWithTag("Player").transform;
-
+        maxHealth = health;
         animator = GetComponent<Animator>();
     }
 
@@ -71,6 +74,15 @@ public class EnemyAiBase : MonoBehaviour
                 break;
         }
 
+    }
+
+    public void TakeDamage()
+    {
+        health--;
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void WalkCheckForAnimator()

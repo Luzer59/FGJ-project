@@ -3,7 +3,7 @@ using System.Collections;
 
 public class SkillFire1 : MonoBehaviour
 {
-    public float moveSpeed;
+    public GameObject explosion;
 
     private bool hasHitGround = false;
 
@@ -19,6 +19,16 @@ public class SkillFire1 : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
+        GetComponent<Rigidbody>().isKinematic = true;
+        explosion.SetActive(true);
+        StartCoroutine(Timer());
+    }
+
+    IEnumerator Timer()
+    {
+        print("asd");
+        yield return new WaitForSeconds(1f);
+        GetComponent<Rigidbody>().isKinematic = false;
+        Destroy(gameObject, 1f);
     }
 }
