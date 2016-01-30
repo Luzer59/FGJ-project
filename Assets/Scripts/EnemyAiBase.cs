@@ -9,7 +9,7 @@ public class EnemyAiBase : MonoBehaviour
 
     private CaptureSystem captureSystem;
     private CaptureParameters captureParameters;
-    private Transform target;
+    //private Transform target;
     private Transform objective;
     private int targetIndex;
 
@@ -24,7 +24,7 @@ public class EnemyAiBase : MonoBehaviour
     void Start()
     {
         captureParameters = captureSystem.activeZoneList[Random.Range(0, captureSystem.activeZoneList.Count)];
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+        //target = GameObject.FindGameObjectWithTag("Player").transform;
 
         animator = GetComponent<Animator>();
     }
@@ -38,7 +38,7 @@ public class EnemyAiBase : MonoBehaviour
 
                 break;
 
-            case State.moveTowardsPlayer:
+            /*case State.moveTowardsPlayer:
                 transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));
                 transform.Translate(transform.forward * moveSpeed, Space.World);
                 break;
@@ -46,10 +46,9 @@ public class EnemyAiBase : MonoBehaviour
             case State.meleeAttack:
                 transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));
                 //attack code
-                break;
+                break;*/
 
             case State.moveTowardsObjective:
-
                 if (!captureSystem.gameOver)
                 {
                     while (true)
@@ -63,10 +62,9 @@ public class EnemyAiBase : MonoBehaviour
                             break;
                         }
                     }
+                    transform.LookAt(new Vector3(captureParameters.transform.position.x, transform.position.y, captureParameters.transform.position.z));
+                    transform.Translate(transform.forward * moveSpeed * Time.deltaTime, Space.World);
                 }   
-
-                transform.LookAt(new Vector3(captureParameters.transform.position.x, transform.position.y, captureParameters.transform.position.z));
-                transform.Translate(transform.forward * moveSpeed, Space.World);
                 break;
 
             default:

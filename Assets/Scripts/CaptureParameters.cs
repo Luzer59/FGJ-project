@@ -8,7 +8,13 @@ public class CaptureParameters : MonoBehaviour
     public float maxHealth;
     public float damageRate;
     public float healRate;
+    public ObjectRotator rotatorTop;
+    public ObjectRotator rotatorBottom;
+    public MeshRenderer meshRendererTop;
+    public MeshRenderer meshRendererBottom;
 
+    private Color startColorTop;
+    private Color startColorBottom;
     private CaptureSystem cs;
 
     void Awake()
@@ -19,6 +25,9 @@ public class CaptureParameters : MonoBehaviour
     void Start()
     {
         health = maxHealth;
+        meshRendererTop.material.EnableKeyword("_EMISSION");
+        startColorTop = meshRendererTop.material.GetColor("_EmissionColor");
+        startColorBottom = meshRendererBottom.material.GetColor("_EmissionColor");
     }
 
     void OnTriggerEnter(Collider other)
@@ -50,5 +59,13 @@ public class CaptureParameters : MonoBehaviour
                 health = maxHealth;
             }
         }
+    }
+
+    void Update()
+    {
+        rotatorTop.rotationSpeed = new Vector3(0f, Mathf.Lerp(0f, rotatorTop.rotationSpeedOriginal.y, health / maxHealth), 0f);
+        rotatorBottom.rotationSpeed = new Vector3(0f, Mathf.Lerp(0f, rotatorBottom.rotationSpeedOriginal.y, health / maxHealth), 0f);
+        meshRendererTop.material.SetColor("_EmissionColor", new Color(Mathf.Lerp(0f, startColorTop.r, health / maxHealth), Mathf.Lerp(0f, startColorTop.g, health / maxHealth), Mathf.Lerp(0f, startColorTop.b, health / maxHealth), 1f));
+        meshRendererBottom.material.SetColor("_EmissionColor", new Color(Mathf.Lerp(0f, startColorBottom.r, health / maxHealth), Mathf.Lerp(0f, startColorBottom.g, health / maxHealth), Mathf.Lerp(0f, startColorBottom.b, health / maxHealth), 1f));
     }
 }

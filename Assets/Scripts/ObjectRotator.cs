@@ -1,18 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ObjectRotator : MonoBehaviour {
+public class ObjectRotator : MonoBehaviour
+{
+    public Vector3 rotationSpeed = new Vector3(1.0f, 0.0f, 0.0f);
+    [HideInInspector]
+    public Vector3 rotationSpeedOriginal;
 
-    public Vector3 rotationSpeed = new Vector3( 1.0f, 0.0f, 0.0f );
+    void Start()
+    {
+        rotationSpeedOriginal = rotationSpeed;
+    }
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		transform.Rotate(rotationSpeed * Time.deltaTime, Space.Self);
-	}
+    void Update()
+    {
+        transform.Rotate(rotationSpeed * Time.deltaTime, Space.Self);
+    }
 
 }
