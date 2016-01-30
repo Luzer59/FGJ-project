@@ -13,6 +13,9 @@ public class EnemyAiBase : MonoBehaviour
     private Transform objective;
     private int targetIndex;
 
+    private Animator animator;
+    private bool isAlreadyWalking = false;
+
     void Awake()
     {
         captureSystem = GameObject.FindGameObjectWithTag("GameController").GetComponent<CaptureSystem>();
@@ -21,8 +24,9 @@ public class EnemyAiBase : MonoBehaviour
     void Start()
     {
         captureParameters = captureSystem.activeZoneList[Random.Range(0, captureSystem.activeZoneList.Count)];
-        state = State.moveTowardsObjective;
         target = GameObject.FindGameObjectWithTag("Player").transform;
+
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -30,6 +34,8 @@ public class EnemyAiBase : MonoBehaviour
         switch (state)
         {
             case State.idle:
+                StopWalking();
+
                 break;
 
             case State.moveTowardsPlayer:
@@ -55,5 +61,24 @@ public class EnemyAiBase : MonoBehaviour
             default:
                 break;
         }
+
+    }
+
+    private void WalkCheckForAnimator()
+    {
+        if (isAlreadyWalking)
+            return;
+        else
+        {
+            animator.SetBool("isWalking", true);
+            isAlreadyWalking = true;
+        }
+    }
+
+    private void StopWalking()
+    {
+        animator.SetTrigger("StopWalking");
+        isAlreadyWalking = false;
+        animator.SetBool("isWalking", false);
     }
 }
