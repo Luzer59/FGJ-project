@@ -5,6 +5,7 @@ public class SkillWater1 : MonoBehaviour
 {
     public Vector2 iceFieldScaleLimits;
     public Vector2 iceMeshScaleLimits;
+    public Vector2 iceMeshHeightScaleLimits;
     public float lerpScaleSpeed;
 
     private Projector iceFieldProjection;
@@ -27,7 +28,8 @@ public class SkillWater1 : MonoBehaviour
         {
             iceFieldProjection.orthographicSize = Mathf.Lerp(iceFieldScaleLimits.x, iceFieldScaleLimits.y, lerpScale);
             float newScale = Mathf.Lerp(iceMeshScaleLimits.x, iceMeshScaleLimits.y, lerpScale);
-            transform.localScale = new Vector3(newScale, newScale, newScale);
+            float newHeight = Mathf.Lerp(iceMeshHeightScaleLimits.x, iceMeshHeightScaleLimits.y, lerpScale);
+            transform.localScale = new Vector3(newScale, newScale, newHeight);
 
             lerpScale += lerpScaleSpeed * Time.deltaTime;
         }
@@ -36,7 +38,8 @@ public class SkillWater1 : MonoBehaviour
         {
             iceFieldProjection.orthographicSize = Mathf.Lerp(iceFieldScaleLimits.x, iceFieldScaleLimits.y, lerpScale);
             float newScale = Mathf.Lerp(iceMeshScaleLimits.x, iceMeshScaleLimits.y, lerpScale);
-            transform.localScale = new Vector3(newScale, newScale, newScale);
+            float newHeight = Mathf.Lerp(iceMeshHeightScaleLimits.x, iceMeshHeightScaleLimits.y, lerpScale); 
+            transform.localScale = new Vector3(newScale, newScale, newHeight);
 
             lerpScale -= lerpScaleSpeed * 1.5f * Time.deltaTime;
             if (lerpScale < 0f)
