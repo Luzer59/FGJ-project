@@ -31,6 +31,12 @@ public class CaptureParameters : MonoBehaviour
         startColorBottom = meshRendererBottom.material.GetColor("_EmissionColor");
     }
 
+    void Reset()
+    {
+        health = maxHealth;
+        isCapturedByPlayer = true;
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Enemy" && health > 0f)
@@ -82,6 +88,9 @@ public class CaptureParameters : MonoBehaviour
         meshRendererTop.material.SetColor("_EmissionColor", new Color(Mathf.Lerp(0f, startColorTop.r, health / maxHealth), Mathf.Lerp(0f, startColorTop.g, health / maxHealth), Mathf.Lerp(0f, startColorTop.b, health / maxHealth), 1f));
         meshRendererBottom.material.SetColor("_EmissionColor", new Color(Mathf.Lerp(0f, startColorBottom.r, health / maxHealth), Mathf.Lerp(0f, startColorBottom.g, health / maxHealth), Mathf.Lerp(0f, startColorBottom.b, health / maxHealth), 1f));
 
-
+        if (LevelController.gameState == GameState.GameStart)
+        {
+            Reset();
+        }
     }
 }

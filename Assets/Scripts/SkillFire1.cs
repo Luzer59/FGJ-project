@@ -26,7 +26,6 @@ public class SkillFire1 : MonoBehaviour
 
     IEnumerator Timer()
     {
-        print("asd");
         yield return new WaitForSeconds(1f);
         GetComponent<Rigidbody>().isKinematic = false;
         Destroy(gameObject, 1f);

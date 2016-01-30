@@ -8,9 +8,21 @@ public class EnemySpawner : MonoBehaviour
     public int spawnInterval = 10;
     public int startTime = 10;
 
-    void Start()
+    private LevelController levelController;
+    private bool active = false;
+
+    void Awake()
     {
-        StartCoroutine(spawnEnemies(spawnInterval, startTime));
+        levelController = GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelController>();
+    }
+
+    void Update()
+    {
+        if (LevelController.gameState == GameState.GamePlay && !active)
+        {
+            active = true;
+            StartCoroutine(spawnEnemies(spawnInterval, startTime));
+        }
     }
 
     IEnumerator spawnEnemies(int spawnInterval, int startTime)
@@ -19,6 +31,11 @@ public class EnemySpawner : MonoBehaviour
         while (true)
         {
             Instantiate(Enemy, SpawnerTransform.position, SpawnerTransform.rotation);
+            if (LevelController.gameState != GameState.GamePlay)
+            {
+                active = false;
+                break;
+            }
             yield return new WaitForSeconds(spawnInterval);
         }
     }

@@ -16,5 +16,9 @@ public class CaptureSystem : MonoBehaviour
             if (activeZoneList[i].isCapturedByPlayer)
                 gameOver = false;
         }
+        if (gameOver)
+        {
+            LevelController.gameState = GameState.GameEnd;
+        }
     }
 }

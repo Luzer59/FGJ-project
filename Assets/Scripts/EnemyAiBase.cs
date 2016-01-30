@@ -18,9 +18,11 @@ public class EnemyAiBase : MonoBehaviour
 
     private Animator animator;
     private bool isAlreadyWalking = false;
+    private LevelController levelController;
 
     void Awake()
     {
+        levelController = GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelController>();
         captureSystem = GameObject.FindGameObjectWithTag("GameController").GetComponent<CaptureSystem>();
     }
 
@@ -34,6 +36,15 @@ public class EnemyAiBase : MonoBehaviour
 
     void Update()
     {
+        if (LevelController.gameState != GameState.GamePlay && state != State.idle)
+        {
+            state = State.idle;
+        }
+        else if (LevelController.gameState == GameState.GameEnd)
+        {
+            Destroy(gameObject);
+        }
+
         switch (state)
         {
             case State.idle:
@@ -81,6 +92,7 @@ public class EnemyAiBase : MonoBehaviour
         health--;
         if (health <= 0)
         {
+            LevelController.killCount++;
             Destroy(gameObject);
         }
     }
