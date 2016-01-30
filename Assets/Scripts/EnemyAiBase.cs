@@ -21,6 +21,7 @@ public class EnemyAiBase : MonoBehaviour
     void Start()
     {
         captureParameters = captureSystem.activeZoneList[Random.Range(0, captureSystem.activeZoneList.Count)];
+        state = State.moveTowardsObjective;
         target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
