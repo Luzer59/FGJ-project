@@ -14,6 +14,8 @@ public class LevelController : MonoBehaviour
     public float levelTimeCurrent;
     public Text winText;
     public GameObject helpProjector;
+    public Image fullFade;
+    public Sprite fadeImage;
 
     private bool gameOver = false;
     private float fade;
@@ -73,7 +75,25 @@ public class LevelController : MonoBehaviour
 
     IEnumerator PlayerWin()
     {
+        fullFade.sprite = fadeImage;
+        float tempFade = 0f;
+        while (true)
+        {
+            tempFade += Time.deltaTime;
+            fullFade.color = new Color(fullFade.color.r, fullFade.color.b, fullFade.color.g, tempFade);
+            if (tempFade >= 1f)
+                break;
+            yield return null;
+        }
         yield return new WaitForSeconds(3f);
+        while (true)
+        {
+            tempFade -= Time.deltaTime;
+            fullFade.color = new Color(fullFade.color.r, fullFade.color.b, fullFade.color.g, tempFade);
+            if (tempFade <= 0f)
+                break;
+            yield return null;
+        }
         gameOver = false;
         gameState = GameState.GameEnd;
     }

@@ -9,6 +9,8 @@ public class CaptureSystem : MonoBehaviour
     public List<CaptureParameters> activeZoneList = new List<CaptureParameters> { };
     public bool gameOver = false;
     public Text gameOverText;
+    public Image fullFade;
+    public Sprite fadeImage;
 
     private float fade;
     private float fadeSpeed = 1f;
@@ -46,7 +48,25 @@ public class CaptureSystem : MonoBehaviour
 
     IEnumerator EndTimer()
     {
+        fullFade.sprite = fadeImage;
+        float tempFade = 0f;
+        while (true)
+        {
+            tempFade += Time.deltaTime;
+            fullFade.color = new Color(fullFade.color.r, fullFade.color.b, fullFade.color.g, tempFade);
+            if (tempFade >= 1f)
+                break;
+            yield return null;
+        }
         yield return new WaitForSeconds(3f);
+        while (true)
+        {
+            tempFade -= Time.deltaTime;
+            fullFade.color = new Color(fullFade.color.r, fullFade.color.b, fullFade.color.g, tempFade);
+            if (tempFade <= 0f)
+                break;
+            yield return null;
+        }
         gameOver = false;
         LevelController.gameState = GameState.GameEnd;
     }

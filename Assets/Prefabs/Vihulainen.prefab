@@ -2073,7 +2073,7 @@ ParticleSystem:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 128370}
-  lengthInSec: .300000012
+  lengthInSec: .400000006
   startDelay: 0
   speed: 1
   randomSeed: 0
@@ -2105,7 +2105,7 @@ ParticleSystem:
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-      minMaxState: 3
+      minMaxState: 0
     startSpeed:
       scalar: 12.1999998
       maxCurve:
@@ -2234,7 +2234,7 @@ ParticleSystem:
         rgba: 4280325119
       minMaxState: 0
     startSize:
-      scalar: 1.14999998
+      scalar: .600000024
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -2301,7 +2301,7 @@ ParticleSystem:
       minMaxState: 0
     gravityModifier: 0
     inheritVelocity: 0
-    maxNumParticles: 1000
+    maxNumParticles: 3537
   ShapeModule:
     serializedVersion: 2
     enabled: 1
@@ -2320,7 +2320,7 @@ ParticleSystem:
     enabled: 1
     m_Type: 0
     rate:
-      scalar: 16.6000004
+      scalar: 139.300003
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -2362,7 +2362,7 @@ ParticleSystem:
     time3: 0
     m_BurstCount: 1
   SizeModule:
-    enabled: 0
+    enabled: 1
     curve:
       scalar: 1
       maxCurve:
@@ -2374,9 +2374,9 @@ ParticleSystem:
           outSlope: 0
           tangentMode: 0
         - time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
+          value: 0
+          inSlope: -2
+          outSlope: -2
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -2422,7 +2422,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 3
   ColorModule:
-    enabled: 0
+    enabled: 1
     gradient:
       maxGradient:
         key0:

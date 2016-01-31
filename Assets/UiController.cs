@@ -83,6 +83,8 @@ public class UiController : MonoBehaviour
             {
                 break;
             }
+            fullFade.sprite = null;
+            fullFade.color = new Color(0f, 0f, 0f, 0f);
 
             fullFade.color = new Color(0f, 0f, 0f, fullFadeValue);
             fullFadeValue += fullFadeSpeed * Time.deltaTime;
@@ -106,6 +108,8 @@ public class UiController : MonoBehaviour
             {
                 break;
             }
+            fullFade.sprite = null;
+            fullFade.color = new Color(0f, 0f, 0f, 1f);
 
             fullFade.color = new Color(0f, 0f, 0f, fullFadeValue);
             fullFadeValue -= fullFadeSpeed* Time.deltaTime;
