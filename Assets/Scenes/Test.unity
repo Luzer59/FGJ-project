@@ -176,6 +176,11 @@ MonoBehaviour:
   maxHealth: 1000
   damageRate: 1
   healRate: 0
+  rotatorTop: {fileID: 0}
+  rotatorBottom: {fileID: 0}
+  meshRendererTop: {fileID: 0}
+  meshRendererBottom: {fileID: 0}
+  healParticles: {fileID: 0}
 --- !u!227 &613721808
 BillboardRenderer:
   m_ObjectHideFlags: 0
@@ -373,6 +378,8 @@ MonoBehaviour:
   maxHealth: 0
   activeZoneList:
   - {fileID: 613721807}
+  gameOver: 0
+  gameOverText: {fileID: 0}
 --- !u!1001 &1291275680
 Prefab:
   m_ObjectHideFlags: 0
