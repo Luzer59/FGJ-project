@@ -147,97 +147,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f59c182035b53b549a109e2cf14bcd05, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &62299811 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 170948, guid: 348d4490afd73a444a5469d1e7a5887d, type: 2}
-  m_PrefabInternal: {fileID: 1940327261}
---- !u!82 &62299813
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 62299811}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: be1bb263558d9bd43a0373d9428281bd, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
---- !u!114 &62299816
+--- !u!114 &62299816 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 62299811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
+  m_PrefabParentObject: {fileID: 11438306, guid: 348d4490afd73a444a5469d1e7a5887d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1940327261}
   m_Script: {fileID: 11500000, guid: 61e1e1284659c7e4f857c765d65c7474, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fade: 1
-  fadeSpeed: .5
-  timerText: {fileID: 1341626362}
-  startButton: {fileID: 866198494}
-  quitButton: {fileID: 433427841}
-  fullFade: {fileID: 1817649711}
 --- !u!4 &78848039 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 9627e92be98e216438bc6e124f6548d8, type: 3}
@@ -3138,6 +3053,18 @@ Prefab:
       propertyPath: m_RootOrder
       value: 21
       objectReference: {fileID: 0}
+    - target: {fileID: 11412634, guid: 348d4490afd73a444a5469d1e7a5887d, type: 2}
+      propertyPath: winText
+      value: 
+      objectReference: {fileID: 2090787516}
+    - target: {fileID: 11412634, guid: 348d4490afd73a444a5469d1e7a5887d, type: 2}
+      propertyPath: helpProjector
+      value: 
+      objectReference: {fileID: 2053831409}
+    - target: {fileID: 11412634, guid: 348d4490afd73a444a5469d1e7a5887d, type: 2}
+      propertyPath: fullFade
+      value: 
+      objectReference: {fileID: 1817649711}
     - target: {fileID: 11430174, guid: 348d4490afd73a444a5469d1e7a5887d, type: 2}
       propertyPath: activeZoneList.Array.data[0]
       value: 
@@ -3154,19 +3081,33 @@ Prefab:
       propertyPath: gameOverText
       value: 
       objectReference: {fileID: 1079526584}
-    - target: {fileID: 11412634, guid: 348d4490afd73a444a5469d1e7a5887d, type: 2}
-      propertyPath: levelTimeStart
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 11412634, guid: 348d4490afd73a444a5469d1e7a5887d, type: 2}
-      propertyPath: winText
+    - target: {fileID: 11438306, guid: 348d4490afd73a444a5469d1e7a5887d, type: 2}
+      propertyPath: timerText
       value: 
-      objectReference: {fileID: 2090787516}
-    - target: {fileID: 11412634, guid: 348d4490afd73a444a5469d1e7a5887d, type: 2}
-      propertyPath: helpProjector
+      objectReference: {fileID: 1341626362}
+    - target: {fileID: 11438306, guid: 348d4490afd73a444a5469d1e7a5887d, type: 2}
+      propertyPath: startButton
       value: 
-      objectReference: {fileID: 2053831409}
+      objectReference: {fileID: 866198494}
+    - target: {fileID: 11438306, guid: 348d4490afd73a444a5469d1e7a5887d, type: 2}
+      propertyPath: quitButton
+      value: 
+      objectReference: {fileID: 433427841}
+    - target: {fileID: 11438306, guid: 348d4490afd73a444a5469d1e7a5887d, type: 2}
+      propertyPath: fullFade
+      value: 
+      objectReference: {fileID: 1817649711}
     - target: {fileID: 11412634, guid: 348d4490afd73a444a5469d1e7a5887d, type: 2}
+      propertyPath: fadeImage
+      value: 
+      objectReference: {fileID: 21300000, guid: d92046a5ecced82469d2cd69567089c0,
+        type: 3}
+    - target: {fileID: 11430174, guid: 348d4490afd73a444a5469d1e7a5887d, type: 2}
+      propertyPath: fadeImage
+      value: 
+      objectReference: {fileID: 21300000, guid: d92046a5ecced82469d2cd69567089c0,
+        type: 3}
+    - target: {fileID: 11430174, guid: 348d4490afd73a444a5469d1e7a5887d, type: 2}
       propertyPath: fullFade
       value: 
       objectReference: {fileID: 1817649711}
