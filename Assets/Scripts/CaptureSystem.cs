@@ -49,6 +49,7 @@ public class CaptureSystem : MonoBehaviour
     IEnumerator EndTimer()
     {
         fullFade.sprite = fadeImage;
+        fullFade.color = Color.white;
         float tempFade = 0f;
         while (true)
         {

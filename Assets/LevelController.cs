@@ -76,6 +76,7 @@ public class LevelController : MonoBehaviour
     IEnumerator PlayerWin()
     {
         fullFade.sprite = fadeImage;
+        fullFade.color = Color.white;
         float tempFade = 0f;
         while (true)
         {

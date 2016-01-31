@@ -113,12 +113,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameStateDisplay: 0
-  levelTimeStart: 150
+  levelTimeStart: 99
   levelTimeCurrent: 0
   winText: {fileID: 0}
   helpProjector: {fileID: 0}
   fullFade: {fileID: 0}
-  fadeImage: {fileID: 0}
+  fadeImage: {fileID: 21300000, guid: 86f22491bd48b224db5a591dc5606959, type: 3}
 --- !u!114 &11430174
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -138,7 +138,7 @@ MonoBehaviour:
   gameOver: 0
   gameOverText: {fileID: 0}
   fullFade: {fileID: 0}
-  fadeImage: {fileID: 0}
+  fadeImage: {fileID: 21300000, guid: 0490f3c373435de4eb061c950adbf84a, type: 3}
 --- !u!114 &11438306
 MonoBehaviour:
   m_ObjectHideFlags: 1

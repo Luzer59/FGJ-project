@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 458752}
   - 119: {fileID: 11936530}
   - 135: {fileID: 13538408}
-  - 114: {fileID: 11455330}
+  - 114: {fileID: 11472254}
   m_Layer: 0
   m_Name: MousePointerProjector
   m_TagString: Untagged
@@ -53,8 +53,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 103168}
-  m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106709}
-  m_LocalPosition: {x: 27.3299999, y: 9.97999954, z: 3.79999995}
+  m_LocalRotation: {x: -.0906099528, y: -.701277375, z: .701277256, w: -.0906099528}
+  m_LocalPosition: {x: 94.0999985, y: 34.2000008, z: 57.2000008}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 410682}
@@ -73,7 +73,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: {x: 0, y: 0, z: 25}
   rotationSpeedOriginal: {x: 0, y: 0, z: 0}
---- !u!114 &11455330
+--- !u!114 &11472254
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -81,13 +81,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 103168}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e30d0e1dab6398942a4e101de69f2310, type: 3}
+  m_Script: {fileID: 11500000, guid: ef2a9568b0f78d44b93f96b27800010f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   projector: {fileID: 11901108}
-  particlesToShowOnDisable: {fileID: 181654, guid: b59cf2bff085a1346ad93fa0a65f2f58,
+  particlesToShowOnDisable: {fileID: 181654, guid: eb33e9f82f31e5542b56516065b649ea,
     type: 2}
-  animationSpeed: 1
+  animationSpeed: 2.5
 --- !u!119 &11901108
 Projector:
   m_ObjectHideFlags: 1
@@ -102,7 +102,7 @@ Projector:
   m_AspectRatio: 1
   m_Orthographic: 1
   m_OrthographicSize: 6.09000015
-  m_Material: {fileID: 2100000, guid: 389d9a0541d667847b67974c4ba80be3, type: 2}
+  m_Material: {fileID: 2100000, guid: de9c64debcb519746be75665f9c4ae4a, type: 2}
   m_IgnoreLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -120,7 +120,7 @@ Projector:
   m_AspectRatio: 1
   m_Orthographic: 1
   m_OrthographicSize: 4
-  m_Material: {fileID: 2100000, guid: e85c226eef562e649916e1142143ccb5, type: 2}
+  m_Material: {fileID: 2100000, guid: cd22cbbf09b8abc458db35754f688fb6, type: 2}
   m_IgnoreLayers:
     serializedVersion: 2
     m_Bits: 0
