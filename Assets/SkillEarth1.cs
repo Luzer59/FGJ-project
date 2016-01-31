@@ -3,9 +3,12 @@ using System.Collections;
 
 public class SkillEarth1 : MonoBehaviour
 {
+    public ParticleSystem leafEffect;
+
     void Start()
     {
-        //transform.Translate(0f, -2f, 0f);
+        GetComponent<AudioSource>().Play();
+        leafEffect.Play(true);
         Destroy(gameObject, 2f);
     }
 }

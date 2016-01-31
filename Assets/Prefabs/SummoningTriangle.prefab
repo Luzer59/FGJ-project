@@ -351,7 +351,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &155150
 GameObject:
   m_ObjectHideFlags: 1
@@ -570,7 +570,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &194114
 GameObject:
   m_ObjectHideFlags: 1
@@ -620,7 +620,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &401346
 Transform:
   m_ObjectHideFlags: 1
@@ -1072,8 +1072,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 182106}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 88.1274185, y: 14.4538593, z: 44.161026}
+  m_LocalRotation: {x: 0, y: .206629097, z: 0, w: .978419363}
+  m_LocalPosition: {x: 72.0303192, y: 14.4538593, z: 66.7411652}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 432402}
@@ -1591,7 +1591,7 @@ MonoBehaviour:
   health: 0
   maxHealth: 100
   damageRate: 10
-  healRate: 1
+  healRate: .100000001
   rotatorTop: {fileID: 11416024}
   rotatorBottom: {fileID: 11479306}
   meshRendererTop: {fileID: 2304962}
@@ -1651,7 +1651,7 @@ MonoBehaviour:
   health: 0
   maxHealth: 100
   damageRate: 10
-  healRate: 1
+  healRate: .100000001
   rotatorTop: {fileID: 11498908}
   rotatorBottom: {fileID: 11426358}
   meshRendererTop: {fileID: 2314232}
@@ -1672,7 +1672,7 @@ MonoBehaviour:
   health: 0
   maxHealth: 100
   damageRate: 10
-  healRate: 1
+  healRate: .100000001
   rotatorTop: {fileID: 11473438}
   rotatorBottom: {fileID: 11440584}
   meshRendererTop: {fileID: 2394460}

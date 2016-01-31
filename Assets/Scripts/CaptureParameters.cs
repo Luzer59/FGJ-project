@@ -68,7 +68,6 @@ public class CaptureParameters : MonoBehaviour
             if (health >= maxHealth)
             {
                 health = maxHealth;
-                healParticles.SetActive(false);
             }
         }
     }
@@ -77,7 +76,7 @@ public class CaptureParameters : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            
+            healParticles.SetActive(false);
         }
     }
 

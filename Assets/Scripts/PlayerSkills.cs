@@ -6,21 +6,37 @@ public class PlayerSkills : MonoBehaviour
     public GameObject fireSkill1Object;
     public GameObject waterSkill1Object;
     public GameObject earthSkill1Object;
+    public float skillTimer;
     public LayerMask mask = -1;
+
+    private float skillTimerCurrent;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (skillTimerCurrent > 0f)
         {
-            ActivateSkillFire();
+            skillTimerCurrent = Mathf.Clamp(skillTimerCurrent - Time.deltaTime, 0f, skillTimer);
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        else
         {
-            ActivateSkillWater();
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            ActivateSkillEarth();
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                ActivateSkillFire();
+                GetComponent<PlayerMovement>().AttackStateActivation();
+                skillTimerCurrent = skillTimer;
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                ActivateSkillWater();
+                GetComponent<PlayerMovement>().AttackStateActivation();
+                skillTimerCurrent = skillTimer;
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                ActivateSkillEarth();
+                GetComponent<PlayerMovement>().AttackStateActivation();
+                skillTimerCurrent = skillTimer;
+            }
         }
     }
 

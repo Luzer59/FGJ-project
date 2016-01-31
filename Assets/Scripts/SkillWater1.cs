@@ -19,6 +19,7 @@ public class SkillWater1 : MonoBehaviour
 
     void Start()
     {
+        GetComponent<AudioSource>().Play();
         StartCoroutine(Shrink());
     }
 

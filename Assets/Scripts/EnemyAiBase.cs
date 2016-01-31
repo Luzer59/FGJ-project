@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections.Generic;
+using System.Collections;
 
 public class EnemyAiBase : MonoBehaviour
 {
@@ -9,6 +9,9 @@ public class EnemyAiBase : MonoBehaviour
     public int health;
     [HideInInspector]
     public int maxHealth;
+    public ParticleSystem deatheffect;
+    public float deathSpeed;
+    public GameObject mesh;
 
     private CaptureSystem captureSystem;
     private CaptureParameters captureParameters;
@@ -19,6 +22,7 @@ public class EnemyAiBase : MonoBehaviour
     private Animator animator;
     private bool isAlreadyWalking = false;
     private LevelController levelController;
+    private bool isDead = false;
 
     void Awake()
     {
@@ -32,6 +36,28 @@ public class EnemyAiBase : MonoBehaviour
         //target = GameObject.FindGameObjectWithTag("Player").transform;
         maxHealth = health;
         animator = GetComponent<Animator>();
+        
+    }
+
+    IEnumerator SpawnEffectTimer()
+    {
+        yield return new WaitForSeconds(1f);
+    }
+
+    IEnumerator DeathEffectTimer()
+    {
+        isDead = true;
+        float scale = 1f;
+        deatheffect.Play();
+        while (true)
+        {
+            scale -= deathSpeed * Time.deltaTime;
+            mesh.transform.localScale = new Vector3(1f, scale, 1f);
+            if (scale <= 0f)
+                break;
+            yield return null;
+        }
+        Destroy(gameObject);
     }
 
     void Update()
@@ -42,7 +68,7 @@ public class EnemyAiBase : MonoBehaviour
         }
         else if (LevelController.gameState == GameState.GameEnd)
         {
-            Destroy(gameObject);
+            StartCoroutine(DeathEffectTimer());
         }
 
         switch (state)
@@ -63,8 +89,10 @@ public class EnemyAiBase : MonoBehaviour
                 break;*/
 
             case State.moveTowardsObjective:
-                if (!captureSystem.gameOver)
+                if (!captureSystem.gameOver && !isDead)
                 {
+                    WalkCheckForAnimator();
+
                     while (true)
                     {
                         if (captureParameters.isCapturedByPlayer == false)
@@ -93,7 +121,7 @@ public class EnemyAiBase : MonoBehaviour
         if (health <= 0)
         {
             LevelController.killCount++;
-            Destroy(gameObject);
+            StartCoroutine(DeathEffectTimer());
         }
     }
 
@@ -103,7 +131,7 @@ public class EnemyAiBase : MonoBehaviour
             return;
         else
         {
-            animator.SetBool("isWalking", true);
+            animator.SetTrigger("StartWalking");
             isAlreadyWalking = true;
         }
     }
@@ -112,6 +140,5 @@ public class EnemyAiBase : MonoBehaviour
     {
         animator.SetTrigger("StopWalking");
         isAlreadyWalking = false;
-        animator.SetBool("isWalking", false);
     }
 }

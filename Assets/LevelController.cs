@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public enum GameState { Menu, GameStart, GamePlay, GameEnd }
 
@@ -8,8 +9,19 @@ public class LevelController : MonoBehaviour
     public static GameState gameState;
     public static int killCount;
 
+    public GameState gameStateDisplay;
     public float levelTimeStart;
     public float levelTimeCurrent;
+    public Text winText;
+
+    private bool gameOver = false;
+    private float fade;
+    private float fadeSpeed = 1f;
+
+    void Start()
+    {
+        gameState = gameStateDisplay;
+    }
 
     void Update()
     {
@@ -25,20 +37,34 @@ public class LevelController : MonoBehaviour
             if (levelTimeCurrent <= 0f)
             {
                 levelTimeCurrent = 0f;
-                gameState = GameState.GameEnd;
-                PlayerWin();
+                gameOver = true;
+                StartCoroutine(PlayerWin());
             }
+        }
+        if (gameOver)
+        {
+            fade = Mathf.Clamp01(fade + fadeSpeed * Time.deltaTime);
+
+            winText.color = new Color(winText.color.r, winText.color.b, winText.color.g, fade);
+        }
+        else
+        {
+            fade = Mathf.Clamp01(fade - fadeSpeed * Time.deltaTime);
+
+            winText.color = new Color(winText.color.r, winText.color.b, winText.color.g, fade);
         }
     }
 
-    void PlayerWin()
+    IEnumerator PlayerWin()
     {
-
+        yield return new WaitForSeconds(3f);
+        gameOver = false;
+        gameState = GameState.GameEnd;
     }
 
     void MenuInput()
     {
-        switch (gameState)
+        /*switch (gameState)
         {
             case GameState.Menu:
                 if (Input.GetKeyDown(KeyCode.Space))
@@ -56,6 +82,6 @@ public class LevelController : MonoBehaviour
 
             default:
                 break;
-        }
+        }*/
     }
 }

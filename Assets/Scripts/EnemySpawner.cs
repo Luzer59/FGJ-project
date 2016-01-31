@@ -16,6 +16,11 @@ public class EnemySpawner : MonoBehaviour
         levelController = GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelController>();
     }
 
+    void Start()
+    {
+        //spawneffect.SetActive(true);
+    }
+
     void Update()
     {
         if (LevelController.gameState == GameState.GamePlay && !active)

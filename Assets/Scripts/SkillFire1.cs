@@ -21,6 +21,7 @@ public class SkillFire1 : MonoBehaviour
     {
         GetComponent<Rigidbody>().isKinematic = true;
         explosion.SetActive(true);
+        GetComponent<AudioSource>().Play();
         StartCoroutine(Timer());
     }
 
