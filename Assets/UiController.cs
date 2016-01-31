@@ -8,7 +8,8 @@ public class UiController : MonoBehaviour
     public float fadeSpeed;
 
     public Text timerText;
-    public Image startButton;
+    public MeshRenderer startButton;
+    public MeshRenderer quitButton;
     public Image fullFade;
 
     private bool isActive;
@@ -28,6 +29,23 @@ public class UiController : MonoBehaviour
 
     void Update()
     {
+        RaycastHit hit;
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 1000f, 1 << 12))
+            {
+                if (hit.transform.name == "Start")
+                {
+                    StartGame();
+                }
+                else if (hit.transform.name == "Quit")
+                {
+                    QuitGame();
+                }
+            }
+        }
+
         if (LevelController.gameState == GameState.Menu)
         {
             fade = Mathf.Clamp01(fade + fadeSpeed * Time.deltaTime);
@@ -35,7 +53,8 @@ public class UiController : MonoBehaviour
             {
                 isActive = true;
 
-                startButton.raycastTarget = true;
+                startButton.GetComponent<BoxCollider>().enabled = true;
+                quitButton.GetComponent<BoxCollider>().enabled = true;
             }
         }
         else
@@ -45,13 +64,15 @@ public class UiController : MonoBehaviour
             {
                 isActive = false;
 
-                startButton.raycastTarget = false;
+                startButton.GetComponent<BoxCollider>().enabled = false;
+                quitButton.GetComponent<BoxCollider>().enabled = false;
             }
         }
 
         timerText.color = new Color(timerText.color.r, timerText.color.b, timerText.color.g, 1 - fade);
-        timerText.text = levelController.levelTimeCurrent.ToString("000.00");
-        startButton.color = new Color(startButton.color.r, startButton.color.b, startButton.color.g, fade);
+        timerText.text = "Defend the Ritual\n" + levelController.levelTimeCurrent.ToString("000.00") + " s";
+        startButton.material.color = new Color(startButton.material.color.r, startButton.material.color.b, startButton.material.color.g, fade);
+        quitButton.material.color = new Color(quitButton.material.color.r, quitButton.material.color.b, quitButton.material.color.g, fade);
     }
 
     IEnumerator FullFade(int levelIndex)

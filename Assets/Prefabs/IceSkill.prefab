@@ -791,7 +791,7 @@ Projector:
   m_Material: {fileID: 2100000, guid: 85457492fdbb62c45a2b31c5ce7612bb, type: 2}
   m_IgnoreLayers:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 6144
 --- !u!198 &19808954
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -7336,6 +7336,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: lerpScaleSpeed
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IgnoreLayers.m_Bits
+      value: 6144
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

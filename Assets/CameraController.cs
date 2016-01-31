@@ -9,7 +9,8 @@ public class CameraController : MonoBehaviour
     public float lerpSpeed;
 
     private GameState thisState;
-    private float lerpValue = 0;
+    private float lerpValue = 0f;
+    private float lerpSway = 0f;
     private LevelController levelController;
 
     void Awake()
@@ -19,9 +20,14 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
-        float t = lerpValue;
         switch (LevelController.gameState)
         {
+            /*case GameState.Menu:
+                lerpSway += Time.deltaTime;
+                    
+                    Mathf.Sin()
+                break;*/
+
             case GameState.GameStart:
                 lerpValue += lerpSpeed * Time.deltaTime;
                 if (lerpValue >= 1f)
@@ -43,6 +49,9 @@ public class CameraController : MonoBehaviour
             default:
                 break;
         }
+
+        float t = lerpValue;
+
         transform.position = Vector3.Lerp(menuPosition.position, playPosition.position, t * t * t * (t * (6f * t - 15f) + 10f));
         transform.rotation = Quaternion.Slerp(menuPosition.rotation, playPosition.rotation, t * t * t * (t * (6f * t - 15f) + 10f));
     }

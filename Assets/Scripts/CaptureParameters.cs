@@ -13,6 +13,7 @@ public class CaptureParameters : MonoBehaviour
     public MeshRenderer meshRendererTop;
     public MeshRenderer meshRendererBottom;
     public GameObject healParticles;
+    public GameObject enterEffect;
 
     private Color startColorTop;
     private Color startColorBottom;
@@ -37,10 +38,22 @@ public class CaptureParameters : MonoBehaviour
         isCapturedByPlayer = true;
     }
 
+    IEnumerator Timer(GameObject target)
+    {
+        yield return new WaitForSeconds(2f);
+        target.SetActive(false);
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Enemy" && health > 0f)
         {
+            if (enterEffect.activeInHierarchy)
+            {
+                enterEffect.SetActive(false);
+            }
+            enterEffect.SetActive(true);
+            StartCoroutine(Timer(enterEffect));
             Destroy(other.gameObject);
             health -= damageRate;
             if (health <= 0f)

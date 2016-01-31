@@ -13,10 +13,12 @@ public class LevelController : MonoBehaviour
     public float levelTimeStart;
     public float levelTimeCurrent;
     public Text winText;
+    public GameObject helpProjector;
 
     private bool gameOver = false;
     private float fade;
     private float fadeSpeed = 1f;
+    private bool isHelpVisible = false;
 
     void Start()
     {
@@ -30,6 +32,11 @@ public class LevelController : MonoBehaviour
         if (gameState == GameState.GameStart)
         {
             levelTimeCurrent = levelTimeStart;
+            if (!isHelpVisible)
+            {
+                isHelpVisible = true;
+                StartCoroutine(HelpProjectorFade());
+            }
         }
         else if (gameState == GameState.GamePlay && levelTimeCurrent > 0f)
         {
@@ -55,6 +62,15 @@ public class LevelController : MonoBehaviour
         }
     }
 
+    IEnumerator HelpProjectorFade()
+    {
+        yield return new WaitForSeconds(3f);
+        helpProjector.SetActive(true);
+        yield return new WaitForSeconds(15f);
+        helpProjector.SetActive(false);
+        isHelpVisible = false;
+    }
+
     IEnumerator PlayerWin()
     {
         yield return new WaitForSeconds(3f);
@@ -64,14 +80,14 @@ public class LevelController : MonoBehaviour
 
     void MenuInput()
     {
-        /*switch (gameState)
+        switch (gameState)
         {
-            case GameState.Menu:
+            /*case GameState.Menu:
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     gameState = GameState.GameStart; 
                 }
-                break;
+                break;*/
 
             case GameState.GamePlay:
                 if (Input.GetKeyDown(KeyCode.Escape))
@@ -82,6 +98,6 @@ public class LevelController : MonoBehaviour
 
             default:
                 break;
-        }*/
+        }
     }
 }
